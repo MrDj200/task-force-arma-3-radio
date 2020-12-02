@@ -33,7 +33,7 @@ if (!isNull (objectParent _unit) && !_isSpectating) then {//_isInVehicle
 };
 
 private _eyeDepth = _pos select 2;//Inlined version of TFAR_fnc_eyeDepth to save performance
-private _can_speak = (_eyeDepth > 0 || _isolated_and_inside); //Inlined version of TFAR_fnc_canSpeak to save performance
+private _can_speak = ((_eyeDepth > 0 || _isolated_and_inside) && alive _unit); //Inlined version of TFAR_fnc_canSpeak to save performance
 private _isRemotePlayer = !(_unit isEqualTo TFAR_currentUnit);
 private _useSw = true;
 private _useLr = true;
